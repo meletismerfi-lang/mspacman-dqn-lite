@@ -77,8 +77,14 @@ print(ACTIONS[int(q.argmax())], q)
 ```
 
 ```bash
-python inference.py      # prints the Q-values for the bundled observation
+python inference.py                  # Q-values for the bundled observation
+python inference.py --play           # play real ALE episodes, prints scores (needs ale-py)
+python inference.py --play --render   # same, in a pygame window
 ```
+
+Standalone playback scores ~1,400 with this minimal preprocessor. The full training pipeline
+(AtariPreprocessing + episodic-life-free wrapper + its exact frame pipeline) scores ~2,150 on
+the same weights — the gap is preprocessing detail, not the network.
 
 ## Training settings (for provenance)
 
