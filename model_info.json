@@ -1,0 +1,27 @@
+{
+  "model": "NatureCNN + Q head (SB3 DQN, Ms. Pac-Man)",
+  "params": 1688745,
+  "input": "uint8 (N, 4, 84, 84) stacked grayscale frames",
+  "output": "float32 (N, 9) Q-values",
+  "actions": [
+    "NOOP",
+    "UP",
+    "RIGHT",
+    "LEFT",
+    "DOWN",
+    "UPRIGHT",
+    "UPLEFT",
+    "DOWNRIGHT",
+    "DOWNLEFT"
+  ],
+  "source": "models/mspacman/dqn_envpool/final_4000000.zip (online q_net only, target net dropped)",
+  "trained_steps": 4000000,
+  "scores_full_game": [
+    2210,
+    1820,
+    1820,
+    2760
+  ],
+  "torchscript": "mspacman_qnet.pt",
+  "weights": "mspacman_qnet_state_dict.pt"
+}
